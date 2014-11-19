@@ -7,7 +7,7 @@ This version is a fork from the eu.floraresearch.lablib.gui.checkboxtree (lablib
 
 Bug corrections
 ===============
--Painting problems when clicking on the expanding/collapsing column
+- Painting problems when clicking on the expanding/collapsing column
 
 New features
 ============
@@ -20,10 +20,10 @@ New features
 Code authors
 ============
 Most part of codes were initially written by:
--Philip Milne
--Scott Violet
--Enrico Boldrini
--Lorenzo Bigagli
+- Philip Milne
+- Scott Violet
+- Enrico Boldrini
+- Lorenzo Bigagli
 
 LICENSE
 =======
