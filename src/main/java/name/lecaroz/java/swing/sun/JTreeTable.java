@@ -1,4 +1,4 @@
-package name.lecaroz.java.swing.jotreetable;
+package name.lecaroz.java.swing.sun;
 
 /*
  * %W% %E%
@@ -20,7 +20,6 @@ import javax.swing.tree.*;
 import javax.swing.table.*;
 
 import name.lecaroz.java.swing.jotreetable.checkboxtree.PropagatePreservingCheckDependenciesTreeCheckingMode;
-
 import name.lecaroz.java.swing.jotreetable.checkboxtree.CheckboxTree;
 import name.lecaroz.java.swing.jotreetable.checkboxtree.DependenciesModel;
 import name.lecaroz.java.swing.jotreetable.checkboxtree.DefaultTreeCheckingModel;

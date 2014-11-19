@@ -20,11 +20,14 @@ New features
 Code authors
 ============
 Most part of codes was initially written by:
-- Philip Milne
-- Scott Violet
 - Enrico Boldrini
 - Lorenzo Bigagli
 
+Warning:
+AbstractCellEditor.java, AbstractTreeTableModel.java, JTreeTable.java, MergeSort.java, TreeTableModel.java, TreeTableModelAdapter.java stored in the name.lecaroz.java.swing.sun.jotreetable package, are under Sun Microsystems Copyright (1997, 1998) and were modified for supporting new features like contextual tooltips. They were initially written by: 
+- Philip Milne
+- Scott Violet
+
 LICENSE
 =======
-See the LICENSE file for more details. Because this project was initially under a GNU GENERAL PUBLIC LICENSE Version 2, it inherits of this license
+See the LICENSE file for more details. Because the eu.floraresearch.lablib.gui.checkboxtree original project was initially under a GNU GENERAL PUBLIC LICENSE Version 2, it inherits of this license

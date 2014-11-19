@@ -1,4 +1,4 @@
-package name.lecaroz.java.swing.jotreetable;
+package name.lecaroz.java.swing.sun;
 /*
  * %W% %E%
  *
