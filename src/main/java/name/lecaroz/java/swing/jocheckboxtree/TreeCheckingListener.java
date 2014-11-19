@@ -11,15 +11,15 @@
  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  * 02110-1301, USA
  */
-package name.lecaroz.java.swing.jotreetable.checkboxtree;
+package name.lecaroz.java.swing.jocheckboxtree;
 
 import java.util.EventListener;
 
 /**
  * The listener notified when the checking in a TreeCheckingModel changes.
  * 
- * @see name.lecaroz.java.swing.jotreetable.checkboxtree.TreeCheckingModel
- * @see name.lecaroz.java.swing.jotreetable.checkboxtree.CheckboxTree
+ * @see name.lecaroz.java.swing.jocheckboxtree.TreeCheckingModel
+ * @see name.lecaroz.java.swing.jocheckboxtree.CheckboxTree
  * @author Enrico Boldrini
  */
 public interface TreeCheckingListener extends EventListener {

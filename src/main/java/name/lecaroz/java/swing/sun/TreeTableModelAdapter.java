@@ -20,7 +20,7 @@ import javax.swing.tree.TreePath;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
 
-import name.lecaroz.java.swing.jotreetable.TreeNodeObject;
+import name.lecaroz.java.swing.jocheckboxtree.TreeNodeObject;
 
 /**
  * This is a wrapper class takes a TreeTableModel and implements the table model interface. The

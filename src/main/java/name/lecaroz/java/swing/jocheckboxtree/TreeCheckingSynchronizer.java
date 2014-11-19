@@ -1,4 +1,4 @@
-package name.lecaroz.java.swing.jotreetable.checkboxtree;
+package name.lecaroz.java.swing.jocheckboxtree;
 
 import javax.swing.tree.TreePath;
 

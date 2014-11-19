@@ -11,7 +11,7 @@
  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  * 02110-1301, USA
  */
-package name.lecaroz.java.swing.jotreetable.checkboxtree;
+package name.lecaroz.java.swing.jocheckboxtree;
 
 import javax.swing.DefaultButtonModel;
 

@@ -16,7 +16,7 @@ package name.lecaroz.java.swing.sun;
 import javax.swing.tree.*;
 import javax.swing.event.*;
 
-import name.lecaroz.java.swing.jotreetable.TreeNodeObject;
+import name.lecaroz.java.swing.jocheckboxtree.TreeNodeObject;
  
 /**
  * An abstract implementation of the TreeTableModel interface, handling 
@@ -175,7 +175,7 @@ public abstract class AbstractTreeTableModel<E> implements TreeTableModel<E> {
     // Default impelmentations for methods in the TreeTableModel interface. 
     //
 
-    public Class getColumnClass(int column) { return Object.class; }
+    public Class<E> getColumnClass(int column) { return (Class<E>) Object.class; }
 
    /** By default, make the column with the Tree in it the only editable one. 
     *  Making this column editable causes the JTable to forward mouse 

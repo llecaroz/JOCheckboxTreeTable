@@ -11,7 +11,7 @@
  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  * 02110-1301, USA
  */
-package name.lecaroz.java.swing.jotreetable.checkboxtree;
+package name.lecaroz.java.swing.jocheckboxtree;
 
 import java.util.HashSet;
 import java.util.Vector;
@@ -21,8 +21,6 @@ import javax.swing.event.TreeModelEvent;
 import javax.swing.event.TreeModelListener;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
-
-import name.lecaroz.java.swing.jotreetable.TreeNodeObject;
 
 /**
  * The default checking model, providing methods for storing and retrieving the checked TreePaths.

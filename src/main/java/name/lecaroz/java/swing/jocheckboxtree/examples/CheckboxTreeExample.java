@@ -11,7 +11,7 @@
  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  * 02110-1301, USA
  */
-package name.lecaroz.java.swing.jotreetable.examples;
+package name.lecaroz.java.swing.jocheckboxtree.examples;
 
 
 import java.awt.BorderLayout;
@@ -26,10 +26,10 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 
-import name.lecaroz.java.swing.jotreetable.checkboxtree.CheckboxTree;
-import name.lecaroz.java.swing.jotreetable.checkboxtree.TreeCheckingEvent;
-import name.lecaroz.java.swing.jotreetable.checkboxtree.TreeCheckingListener;
-import name.lecaroz.java.swing.jotreetable.checkboxtree.TreeCheckingModel;
+import name.lecaroz.java.swing.jocheckboxtree.CheckboxTree;
+import name.lecaroz.java.swing.jocheckboxtree.TreeCheckingEvent;
+import name.lecaroz.java.swing.jocheckboxtree.TreeCheckingListener;
+import name.lecaroz.java.swing.jocheckboxtree.TreeCheckingModel;
 
 /**
  * A simple example of the CheckboxTree with key listeners: 'a' for add a node

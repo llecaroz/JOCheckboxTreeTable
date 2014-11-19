@@ -11,7 +11,7 @@
  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  * 02110-1301, USA
  */
-package name.lecaroz.java.swing.jotreetable.examples;
+package name.lecaroz.java.swing.jocheckboxtree.examples;
 
 
 import java.awt.BorderLayout;
@@ -36,8 +36,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
-import name.lecaroz.java.swing.jotreetable.checkboxtree.CheckboxTree;
-import name.lecaroz.java.swing.jotreetable.checkboxtree.TreeCheckingModel;
+import name.lecaroz.java.swing.jocheckboxtree.CheckboxTree;
+import name.lecaroz.java.swing.jocheckboxtree.TreeCheckingModel;
 
 /**
  * An example showcase for the various look and feels. There are issues with

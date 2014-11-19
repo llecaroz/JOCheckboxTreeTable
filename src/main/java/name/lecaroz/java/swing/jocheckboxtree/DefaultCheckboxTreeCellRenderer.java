@@ -11,7 +11,7 @@
  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  * 02110-1301, USA
  */
-package name.lecaroz.java.swing.jotreetable.checkboxtree;
+package name.lecaroz.java.swing.jocheckboxtree;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -27,8 +27,7 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeCellRenderer;
 import javax.swing.tree.TreePath;
 
-import name.lecaroz.java.swing.jotreetable.TreeNodeObject;
-import name.lecaroz.java.swing.jotreetable.checkboxtree.QuadristateButtonModel.State;
+import name.lecaroz.java.swing.jocheckboxtree.QuadristateButtonModel.State;
 
 /**
  * A renderer for the CheckboxTree. This implementation decorates a DefaultTreeCellRenderer (i.e. a

@@ -15,7 +15,7 @@ package name.lecaroz.java.swing.sun;
 
 import javax.swing.tree.TreeModel;
 
-import name.lecaroz.java.swing.jotreetable.TreeNodeObject;
+import name.lecaroz.java.swing.jocheckboxtree.TreeNodeObject;
 
 /**
  * TreeTableModel is the model used by a JTreeTable. It extends TreeModel

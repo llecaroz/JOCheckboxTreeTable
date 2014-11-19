@@ -11,16 +11,15 @@
  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  * 02110-1301, USA
  */
-package name.lecaroz.java.swing.jotreetable.checkboxtree;
+package name.lecaroz.java.swing.jocheckboxtree;
 
 import java.util.AbstractList;
 import java.util.Vector;
 
 import javax.swing.tree.TreePath;
 
-import name.lecaroz.java.swing.jotreetable.checkboxtree.DefaultTreeCheckingModel;
-import name.lecaroz.java.swing.jotreetable.checkboxtree.TreeCheckingMode;
-import name.lecaroz.java.swing.jotreetable.TreeNodeObject;
+import name.lecaroz.java.swing.jocheckboxtree.DefaultTreeCheckingModel;
+import name.lecaroz.java.swing.jocheckboxtree.TreeCheckingMode;
 
 /**
  * PropagatePreservingCheckDependenciesTreeCheckingMode define a TreeCheckingMode with down
@@ -40,9 +39,9 @@ public class PropagatePreservingCheckDependenciesTreeCheckingMode<E> extends Tre
 {
   
   final private DependenciesModel<E> dependencies;
-  public PropagatePreservingCheckDependenciesTreeCheckingMode(DefaultTreeCheckingModel model, DependenciesModel<E> dependencies)
+  public PropagatePreservingCheckDependenciesTreeCheckingMode(DefaultTreeCheckingModel defaultTreeCheckingModel, DependenciesModel<E> dependencies)
   {
-    super(model);
+    super(defaultTreeCheckingModel);
     this.dependencies=dependencies;
   }
 

@@ -7,6 +7,12 @@ This version is a fork from the eu.floraresearch.lablib.gui.checkboxtree (lablib
 
 The Checkboxtree class is used in the Sun JTreeTable modified class for enabling Tree tables with checkboxes in the tree part. 
 
+A full example can be found under src/main/java/name/lecaroz/java/swing/sun/examples/JOCheckboxTreeTableExample.java
+This example implements:
+- TreeNodeObject for custom rendering on each nodes
+- TreeTableModel for providing data to be displayed
+- DependenciesModel for declaring dependencies between nodes in PropagatePreservingCheckDependenciesTreeCheckingMode 
+
 Bug corrections
 ===============
 - Painting problems when clicking on the expanding/collapsing column on the Checkboxtree
@@ -26,7 +32,7 @@ Most part of codes was initially written by:
 - Lorenzo Bigagli
 
 Warning:
-AbstractCellEditor.java, AbstractTreeTableModel.java, JTreeTable.java, MergeSort.java, TreeTableModel.java, TreeTableModelAdapter.java stored in the name.lecaroz.java.swing.sun.jotreetable package, are under Sun Microsystems Copyright (1997, 1998) and were modified for supporting new features like contextual tooltips. They were initially written by: 
+AbstractCellEditor.java, AbstractTreeTableModel.java, JTreeTable.java (renamed and modified here into JOCheckboxTreeTable), MergeSort.java, TreeTableModel.java, TreeTableModelAdapter.java stored in the name.lecaroz.java.swing.sun package, are under Sun Microsystems Copyright (1997, 1998) and were modified for supporting new features like contextual tooltips. They were initially written by: 
 - Philip Milne
 - Scott Violet
 

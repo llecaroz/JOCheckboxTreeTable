@@ -19,10 +19,8 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.tree.*;
 import javax.swing.table.*;
 
-import name.lecaroz.java.swing.jotreetable.checkboxtree.PropagatePreservingCheckDependenciesTreeCheckingMode;
-import name.lecaroz.java.swing.jotreetable.checkboxtree.CheckboxTree;
-import name.lecaroz.java.swing.jotreetable.checkboxtree.DependenciesModel;
-import name.lecaroz.java.swing.jotreetable.checkboxtree.DefaultTreeCheckingModel;
+import name.lecaroz.java.swing.jocheckboxtree.CheckboxTree;
+import name.lecaroz.java.swing.jocheckboxtree.TreeCheckingMode;
 
 import java.awt.Dimension;
 import java.awt.Component;
@@ -41,7 +39,11 @@ import java.util.EventObject;
  * @author Scott Violet
  */
 
-public class JTreeTable<E> extends JTable
+/*
+ * 2014/11/19: Louis Lecaroz, JTreeTable renamed into JOCheckboxTreeTable with new features 
+ * related to the JCheckboxTree implementation 
+ */
+public class JOCheckboxTreeTable<E> extends JTable
 {
   /**
    * 
@@ -52,14 +54,17 @@ public class JTreeTable<E> extends JTable
    */
   protected TreeTableCellRenderer tree;
 
-  public JTreeTable<E> setTreeTableModel(TreeTableModel<E> treeTableModel, DependenciesModel<E> dependencies) {
+  public JOCheckboxTreeTable<E> setCheckingMode(TreeCheckingMode treeCheckingMode) {
+    return this;
+    
+  }
+  public JOCheckboxTreeTable<E> setTreeTableModel(TreeTableModel<E> treeTableModel) {
 
     // Create the tree. It will be used as a renderer and editor. 
     tree = new TreeTableCellRenderer(treeTableModel);
     tree.setRootVisible(true);
-    //tree.getCheckingModel().setCheckingMode(TreeCheckingModel.CheckingMode.PROPAGATE_PRESERVING_CHECK);
-    tree.getCheckingModel().setCheckingMode(new PropagatePreservingCheckDependenciesTreeCheckingMode<E>((DefaultTreeCheckingModel)tree.getCheckingModel(),dependencies));
-
+    //tree.getCheckingModel().setCheckingMode(new PropagatePreservingCheckDependenciesTreeCheckingMode<E>((DefaultTreeCheckingModel)tree.getCheckingModel(),dependencies));
+    //
     // Install a tableModel representing the visible rows in the tree. 
     super.setModel(new TreeTableModelAdapter<E>(treeTableModel, tree));
 
@@ -88,10 +93,10 @@ public class JTreeTable<E> extends JTable
     return this;
     
   }
-  public JTreeTable(TreeTableModel<E> treeTableModel,DependenciesModel<E> dependencies)
+  public JOCheckboxTreeTable(TreeTableModel<E> treeTableModel)
   {
     super();
-    this.setTreeTableModel(treeTableModel, dependencies);
+    this.setTreeTableModel(treeTableModel);
   }
 
   /*
@@ -196,8 +201,8 @@ public class JTreeTable<E> extends JTable
     public void setRowHeight(int rowHeight) {
       if(rowHeight > 0) {
         super.setRowHeight(rowHeight);
-        if(JTreeTable.this != null && JTreeTable.this.getRowHeight() != rowHeight) {
-          JTreeTable.this.setRowHeight(getRowHeight());
+        if(JOCheckboxTreeTable.this != null && JOCheckboxTreeTable.this.getRowHeight() != rowHeight) {
+          JOCheckboxTreeTable.this.setRowHeight(getRowHeight());
         }
       }
     }
@@ -206,7 +211,7 @@ public class JTreeTable<E> extends JTable
     @Override
     public void setBounds(int x, int y, int w, int h)
     {
-      super.setBounds(x, 0, w, JTreeTable.this.getHeight());
+      super.setBounds(x, 0, w, JOCheckboxTreeTable.this.getHeight());
     }
 
     @Override

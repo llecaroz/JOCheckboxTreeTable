@@ -11,7 +11,7 @@
  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  * 02110-1301, USA
  */
-package name.lecaroz.java.swing.jotreetable.checkboxtree;
+package name.lecaroz.java.swing.jocheckboxtree;
 
 import java.awt.Rectangle;
 import java.awt.event.KeyAdapter;
@@ -24,8 +24,6 @@ import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
-
-import name.lecaroz.java.swing.jotreetable.TreeNodeObject;
 
 /**
  * A tree whose nodes may be checked (e.g. the widget usually found in software installers, that

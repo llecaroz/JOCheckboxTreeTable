@@ -11,7 +11,7 @@
  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  * 02110-1301, USA
  */
-package name.lecaroz.java.swing.jotreetable.examples;
+package name.lecaroz.java.swing.jocheckboxtree.examples;
 
 
 import java.awt.Color;
@@ -26,10 +26,10 @@ import javax.swing.JTree;
 import javax.swing.UIManager;
 import javax.swing.tree.TreePath;
 
-import name.lecaroz.java.swing.jotreetable.checkboxtree.CheckboxTree;
-import name.lecaroz.java.swing.jotreetable.checkboxtree.CheckboxTreeCellRenderer;
-import name.lecaroz.java.swing.jotreetable.checkboxtree.TreeCheckingModel;
-import name.lecaroz.java.swing.jotreetable.checkboxtree.TreeCheckingModel.CheckingMode;
+import name.lecaroz.java.swing.jocheckboxtree.CheckboxTree;
+import name.lecaroz.java.swing.jocheckboxtree.CheckboxTreeCellRenderer;
+import name.lecaroz.java.swing.jocheckboxtree.TreeCheckingModel;
+import name.lecaroz.java.swing.jocheckboxtree.TreeCheckingModel.CheckingMode;
 
 /**
  * Example showing the implementation of a CheckboxTree with RadioButton-style
