@@ -1,5 +1,5 @@
 JOCheckboxTreeTable
-===========
+===================
 
 Java Opened source version of a TreeTable with Checkboxes in the tree part
 
@@ -9,7 +9,7 @@ The Checkboxtree class is used in the Sun JTreeTable modified class for enabling
 
 A full example can be found under src/main/java/name/lecaroz/java/swing/sun/examples/JOCheckboxTreeTableExample.java
 This example implements:
-- TreeNodeObject for custom rendering on each nodes
+- TreeNodeObject for custom rendering on each node
 - TreeTableModel for providing data to be displayed
 - DependenciesModel for declaring dependencies between nodes in PropagatePreservingCheckDependenciesTreeCheckingMode 
 
