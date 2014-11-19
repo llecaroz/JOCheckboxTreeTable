@@ -8,6 +8,7 @@ This version is a fork from the eu.floraresearch.lablib.gui.checkboxtree (lablib
 The Checkboxtree class is used in the Sun JTreeTable modified class for enabling Tree tables with checkboxes in the tree part. 
 
 A full example can be found under src/main/java/name/lecaroz/java/swing/sun/examples/JOCheckboxTreeTableExample.java
+
 This example implements:
 - TreeNodeObject for custom rendering on each node
 - TreeTableModel for providing data to be displayed
