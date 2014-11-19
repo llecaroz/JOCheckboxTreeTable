@@ -1,13 +1,14 @@
-JOTreeTable
+JOCheckboxTreeTable
 ===========
 
-Java Opened source version of TreeTable
+Java Opened source version of a TreeTable with checkboxes in the tree part
 
-This version is a fork from the eu.floraresearch.lablib.gui.checkboxtree (lablib-checkboxtree artifactId) JTreeTable version 4.0-beta-1: http://essi-lab.eu/nexus/content/repositories/open.repos/eu/floraresearch/lablib-checkboxtree/4.0-beta-1/
+This version is a fork from the eu.floraresearch.lablib.gui.checkboxtree (lablib-checkboxtree artifactId) Checkboxtree version 4.0-beta-1: http://essi-lab.eu/nexus/content/repositories/open.repos/eu/floraresearch/lablib-checkboxtree/4.0-beta-1/
+The Checkboxtree class is used in the Sun JTreeTable modified class for enabling Tree tables with checkboxes in the tree part. 
 
 Bug corrections
 ===============
-- Painting problems when clicking on the expanding/collapsing column
+- Painting problems when clicking on the expanding/collapsing column on the Checkboxtree
 
 New features
 ============

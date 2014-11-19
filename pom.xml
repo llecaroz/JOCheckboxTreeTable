@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>name.lecaroz.java</groupId>
-  <artifactId>swing.jotreetable</artifactId>
+  <artifactId>swing.jocheckboxtreetable</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
