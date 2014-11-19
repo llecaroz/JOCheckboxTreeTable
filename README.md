@@ -19,7 +19,7 @@ New features
 
 Code authors
 ============
-Most part of codes were initially written by:
+Most part of codes was initially written by:
 - Philip Milne
 - Scott Violet
 - Enrico Boldrini
