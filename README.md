@@ -1,7 +1,7 @@
 JOCheckboxTreeTable
 ===================
-
-Java Opened source version of a TreeTable with Checkboxes in the tree part
+J(ava) O(pen source) Checkbox Tree Table
+Java Open source version of a TreeTable with Checkboxes in the tree part
 
 This version is a fork from the eu.floraresearch.lablib.gui.checkboxtree (lablib-checkboxtree artifactId) Checkboxtree version 4.0-beta-1: http://essi-lab.eu/nexus/content/repositories/open.repos/eu/floraresearch/lablib-checkboxtree/4.0-beta-1/
 
@@ -33,7 +33,7 @@ Most part of codes was initially written by:
 - Lorenzo Bigagli
 
 Warning:
-AbstractCellEditor.java, AbstractTreeTableModel.java, JTreeTable.java (renamed and modified here into JOCheckboxTreeTable), MergeSort.java, TreeTableModel.java, TreeTableModelAdapter.java stored in the name.lecaroz.java.swing.sun package, are under Sun Microsystems Copyright (1997, 1998) and were modified for supporting new features like contextual tooltips. They were initially written by: 
+AbstractTreeTableModel.java, JTreeTable.java (renamed and modified here into JOCheckboxTreeTable), TreeTableModel.java, TreeTableModelAdapter.java stored in the name.lecaroz.java.swing.sun package, are under Sun Microsystems Copyright (1997, 1998) and were modified for supporting new features like contextual tooltips. They were initially written by: 
 - Philip Milne
 - Scott Violet
 

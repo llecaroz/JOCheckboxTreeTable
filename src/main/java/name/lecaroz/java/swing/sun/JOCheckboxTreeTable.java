@@ -18,6 +18,7 @@ import javax.swing.*;
 import javax.swing.event.TableModelEvent;
 import javax.swing.tree.*;
 import javax.swing.table.*;
+import javax.swing.AbstractCellEditor;
 
 import name.lecaroz.java.swing.jocheckboxtree.CheckboxTree;
 import name.lecaroz.java.swing.jocheckboxtree.TreeCheckingMode;
@@ -243,6 +244,10 @@ public class JOCheckboxTreeTable<E> extends JTable
 
   public class TreeTableCellEditor extends AbstractCellEditor implements TableCellEditor
   {
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 6799931930673580189L;
     public Component getTableCellEditorComponent(JTable table, Object value,
           boolean isSelected, int r, int c)
     {
@@ -297,6 +302,10 @@ public class JOCheckboxTreeTable<E> extends JTable
         }
       }
       return tree.getRowForLocation(((MouseEvent)e).getX(),((MouseEvent)e).getY())==-1?false:true;
+    }
+    public Object getCellEditorValue()
+    {
+      return null;
     }
   }
 }
