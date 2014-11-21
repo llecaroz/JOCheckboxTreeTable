@@ -4,7 +4,7 @@
 
   <groupId>name.lecaroz</groupId>
   <artifactId>java.swing.jocheckboxtreetable</artifactId>
-  <version>1.0.0</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>J(ava) O(pen source) Checkbox Tree Table</name>
