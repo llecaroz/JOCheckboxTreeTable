@@ -2,9 +2,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>name.lecaroz.java</groupId>
-  <artifactId>swing.jocheckboxtreetable</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <groupId>name.lecaroz</groupId>
+  <artifactId>java.swing.jocheckboxtreetable</artifactId>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>J(ava) O(pen source) Checkbox Tree Table</name>
@@ -23,6 +23,12 @@
     <developer>
       <name>Louis Lecaroz</name>
       <email>louis@lecaroz.name</email>
+    </developer>
+    <developer>
+      <name>Enrico Boldrini</name>
+    </developer>
+    <developer>
+      <name>Lorenzo Bigagli</name>
     </developer>
   </developers>
   
