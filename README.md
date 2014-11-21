@@ -1,6 +1,7 @@
 JOCheckboxTreeTable
 ===================
 J(ava) O(pen source) Checkbox Tree Table
+
 Java Open source version of a TreeTable with Checkboxes in the tree part
 
 This version is a fork from the eu.floraresearch.lablib.gui.checkboxtree (lablib-checkboxtree artifactId) Checkboxtree version 4.0-beta-1: http://essi-lab.eu/nexus/content/repositories/open.repos/eu/floraresearch/lablib-checkboxtree/4.0-beta-1/
