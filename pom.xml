@@ -7,8 +7,28 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>swing.jocheckboxtreetable</name>
-  <url>http://maven.apache.org</url>
+  <name>J(ava) O(pen source) Checkbox Tree Table</name>
+  <description>Swing Java Open source version of a TreeTable with Checkboxes in the tree part</description>
+  <url>https://github.com/llecaroz/JOCheckboxTreeTable</url>
+    
+   <licenses>
+    <license>
+      <name>GNU General Public License, version 2</name>
+      <url>http://www.gnu.org/licenses/gpl-2.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <developers>
+    <developer>
+      <name>Louis Lecaroz</name>
+      <email>louis@lecaroz.name</email>
+    </developer>
+  </developers>
+  
+  <scm>
+    <url>scm:git:https://github.com/llecaroz/JOCheckboxTreeTable.git</url>
+  </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
