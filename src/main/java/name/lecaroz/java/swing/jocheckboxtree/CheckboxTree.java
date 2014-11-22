@@ -374,7 +374,6 @@ public class CheckboxTree extends JTree
         int x = e.getX();
         int y = e.getY();
         int row = getRowForLocation(x, y);
-        System.out.println("mouse row:"+row);
         
         if (row != -1) {
           // click inside some node
@@ -481,7 +480,6 @@ public class CheckboxTree extends JTree
       newCheckingModel.addTreeCheckingListener(new TreeCheckingListener() {
         public void valueChanged(TreeCheckingEvent e)
         {
-          System.out.println("value changed:"+e.changedPath);
           CheckboxTree.this.repaint();
         }
       });

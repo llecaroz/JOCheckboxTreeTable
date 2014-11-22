@@ -66,7 +66,6 @@ public class QuadristateCheckbox extends JCheckBox {
 	super.addMouseListener(new MouseAdapter() {
 	    @Override
 	    public void mousePressed(MouseEvent e) {
-	      System.out.println("Aye aye aye");
 		grabFocus();
 		getModel().nextState();
 	    }
