@@ -32,7 +32,7 @@ Using this project
 This project was uploaded as Maven Jar artifact under the OSSRH Nexus server. Please add the correct dependency in your POM project:
 - artifactId: java.swing.jocheckboxtreetable
 - groupId: name.lecaroz
-- version: Check on the Central Maven repository server for the latest release.
+- version: 0.0.2
 
 Code authors
 ============
