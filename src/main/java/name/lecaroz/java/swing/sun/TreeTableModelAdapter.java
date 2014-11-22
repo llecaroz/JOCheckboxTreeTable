@@ -66,7 +66,6 @@ public class TreeTableModelAdapter<E> extends AbstractTableModel
 
   public int getColumnCount()
   {
-    System.out.println("treeTableModel:"+treeTableModel+"=>"+(treeTableModel!=null?treeTableModel.getColumnCount():null));
     return (treeTableModel!=null?treeTableModel.getColumnCount():0);
   }
 

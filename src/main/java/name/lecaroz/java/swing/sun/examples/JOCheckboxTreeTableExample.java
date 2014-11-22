@@ -44,6 +44,9 @@ import name.lecaroz.java.swing.sun.JOCheckboxTreeTable;
 import name.lecaroz.java.swing.sun.TreeTableModel;
 
 public class JOCheckboxTreeTableExample extends JFrame {
+  private static final long serialVersionUID = 4421111660963742252L;
+
+  // Node implementation for managing display for each node of data
   public class StringNode implements TreeNodeObject<String> {
     final private String data;
     final private boolean canBeChecked;
@@ -92,6 +95,7 @@ public class JOCheckboxTreeTableExample extends JFrame {
     
   };
 
+  // Data model for returning rows & columns data
   public class SampleDataTreeModel  extends AbstractTreeTableModel<String> 
   implements TreeTableModel<String> {    
     // Names of the columns.
@@ -162,8 +166,6 @@ public class JOCheckboxTreeTableExample extends JFrame {
 
     public void setValueAt(Object aValue, TreeNodeObject<String> treeNodeObject, int column)
     {
-      // TODO Auto-generated method stub
-      
     }
 
     public String getObject(TreeNodeObject<String> node)
@@ -215,6 +217,8 @@ public class JOCheckboxTreeTableExample extends JFrame {
       return (dependencies!=null?(String[]) dependencies.toArray(new String[0]):null);
     }
   }
+  
+  // Constructor for instantiating dataset & Swing UI components
   public JOCheckboxTreeTableExample() {
     
     // dataset to be displayed in the JOCheckboxTreeTable
@@ -240,24 +244,25 @@ public class JOCheckboxTreeTableExample extends JFrame {
     );
    // Entry "1" and "2.2" have custom icons 
    SampleDataTreeModel dataModel=new SampleDataTreeModel(root);
-   checkboxTreeTable = new JOCheckboxTreeTable<String>(dataModel);
+   final JOCheckboxTreeTable<String> checkboxTreeTable = new JOCheckboxTreeTable<String>(dataModel);
 
    // Dependencies..
    // 1 depends on 2 & 4
    // 3 depends on 4
    DependenciesModel<String> dependencies=(DependenciesModel<String>)new StringDependencies().addDependency("1","2").addDependency("1","4").addDependency("3","4");
+
+   // Set the checking mode, must be done after having set data in the JOCheckboxTreeTable constructor or thru JOCheckboxTreeTable.setTreeTableModel()
    ((CheckboxTree)checkboxTreeTable.getTree()).getCheckingModel().setCheckingMode(new PropagatePreservingCheckDependenciesTreeCheckingMode<String>((DefaultTreeCheckingModel)((CheckboxTree)checkboxTreeTable.getTree()).getCheckingModel(),dependencies));
 
    final JScrollPane treeTablePane=new JScrollPane(checkboxTreeTable);
    getContentPane().add(treeTablePane, BorderLayout.CENTER);
    setMinimumSize(new Dimension(400, 400));
+   setDefaultCloseOperation(EXIT_ON_CLOSE);
   }
 
   /**
    * 
    */
-  private static final long serialVersionUID = 4421111660963742252L;
-  private JOCheckboxTreeTable<String> checkboxTreeTable;
  
   public static void main(String[] args) throws IOException
   {
