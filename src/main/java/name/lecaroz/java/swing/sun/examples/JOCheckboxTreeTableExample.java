@@ -92,6 +92,11 @@ public class JOCheckboxTreeTableExample extends JFrame {
     {
       return childs;
     }
+
+    public boolean isEnabled()
+    {
+      return true;
+    }
     
   };
 
@@ -102,7 +107,7 @@ public class JOCheckboxTreeTableExample extends JFrame {
     private final String[] cNames = { "Name", "Description" };
 
     // Types of the columns.
-    private final Class[] cTypes = { TreeTableModel.class, String.class };
+    private final Class<?>[] cTypes = { TreeTableModel.class, String.class };
     
     public SampleDataTreeModel(Object root)
     {
@@ -135,7 +140,7 @@ public class JOCheckboxTreeTableExample extends JFrame {
       return cNames[column];
     }
 
-    public Class getColumnClass(int column)
+    public Class<?> getColumnClass(int column)
     {
       return cTypes[column];
     }
@@ -154,7 +159,6 @@ public class JOCheckboxTreeTableExample extends JFrame {
 
     public String getTooltipAt(TreeNodeObject<String> node, int column)
     {
-      Object file = this.getObject(node);
       switch (column) {
         case 0:
           return "Tooltip: "+node.getObject().toString();

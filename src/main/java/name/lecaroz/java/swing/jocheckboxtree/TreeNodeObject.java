@@ -19,6 +19,7 @@ public interface TreeNodeObject<E>
 {
   E getObject();
   boolean canBeChecked();
+  boolean isEnabled();
   Component getTreeCellRendererComponent(JTree tree, TreeCellRenderer treeCellRenderer, DefaultTreeCellRenderer label, boolean selected, boolean expanded,
         boolean leaf, int row,
         boolean hasFocus);

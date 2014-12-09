@@ -217,7 +217,7 @@ public class DefaultTreeCheckingModel implements TreeCheckingModel
    */
   public void checkSubTree(final TreePath path)
   {
-    if(path.getLastPathComponent() instanceof TreeNodeObject  && ((TreeNodeObject<?>)path.getLastPathComponent()).canBeChecked()==false) return;
+    if(path.getLastPathComponent() instanceof TreeNodeObject  && (((TreeNodeObject<?>)path.getLastPathComponent()).canBeChecked()==false || ((TreeNodeObject<?>)path.getLastPathComponent()).isEnabled()==false)) return;
     addToCheckedPathsSet(path);
     removeFromGreyedPathsSet(path);
     Object node = path.getLastPathComponent();

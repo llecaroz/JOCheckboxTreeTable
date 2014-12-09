@@ -175,14 +175,14 @@ public abstract class AbstractTreeTableModel<E> implements TreeTableModel<E> {
     // Default impelmentations for methods in the TreeTableModel interface. 
     //
 
-    public Class<E> getColumnClass(int column) { return (Class<E>) Object.class; }
+    public Class<?> getColumnClass(int column) { return Object.class; }
 
    /** By default, make the column with the Tree in it the only editable one. 
     *  Making this column editable causes the JTable to forward mouse 
     *  and keyboard events in the Tree column to the underlying JTree. 
     */ 
     public boolean isCellEditable(TreeNodeObject<E> node, int column) { 
-         return getColumnClass(column) == TreeTableModel.class; 
+         return getColumnClass(column) == (Class<?>)TreeTableModel.class; 
     }
 
     public void setValueAt(Object aValue, TreeTableModel<Object> node, int column) {}
