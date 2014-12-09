@@ -100,6 +100,7 @@ public class PropagatePreservingCheckDependenciesTreeCheckingMode<E> extends Tre
     }
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public void checkPath(TreePath path)
   {
@@ -128,7 +129,7 @@ public class PropagatePreservingCheckDependenciesTreeCheckingMode<E> extends Tre
     
     for(int pos=0;pos<paths.size();pos++) {
       for(TreePath childPath:this.model.getChildrenPath(paths.get(pos))) {
-        if(childPath.getLastPathComponent() instanceof TreeNodeObject && ((TreeNodeObject<?>)childPath.getLastPathComponent()).canBeChecked()==true && this.model.isPathChecked(childPath)==false && toCheck.contains( ((TreeNodeObject<?>)childPath.getLastPathComponent()).getObject())  ) {
+        if(childPath.getLastPathComponent() instanceof TreeNodeObject && ((TreeNodeObject<?>)childPath.getLastPathComponent()).canBeChecked()==true  && ((TreeNodeObject<?>)childPath.getLastPathComponent()).isEnabled()==true && this.model.isPathChecked(childPath)==false && toCheck.contains( ((TreeNodeObject<?>)childPath.getLastPathComponent()).getObject())  ) {
           this.doCheckPath(childPath);
         
         }
@@ -147,6 +148,7 @@ public class PropagatePreservingCheckDependenciesTreeCheckingMode<E> extends Tre
       this.model.updatePathGreyness(parentPath);
     }    
   }
+  @SuppressWarnings("unchecked")
   @Override
   public void uncheckPath(TreePath path)
   {
@@ -168,7 +170,7 @@ public class PropagatePreservingCheckDependenciesTreeCheckingMode<E> extends Tre
     // uncheck all parents/dependencies owner of this node
     for(TreePath childPath: this.model.getCheckingPaths()) {
       Object childPathComponent=(Object) childPath.getLastPathComponent();
-      if(childPathComponent instanceof TreeNodeObject && ((TreeNodeObject<?>)childPathComponent).canBeChecked()==true && toUncheck.contains( ((TreeNodeObject<?>)childPathComponent).getObject())) 
+      if(childPathComponent instanceof TreeNodeObject && ((TreeNodeObject<?>)childPathComponent).canBeChecked()==true  && ((TreeNodeObject<?>)childPathComponent).isEnabled()==true && toUncheck.contains( ((TreeNodeObject<?>)childPathComponent).getObject())) 
         this.doUncheckPath(childPath);
     }
 }

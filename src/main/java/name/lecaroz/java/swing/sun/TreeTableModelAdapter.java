@@ -74,9 +74,9 @@ public class TreeTableModelAdapter<E> extends AbstractTableModel
     return (treeTableModel!=null?treeTableModel.getColumnName(column):"");
   }
 
-  public Class<E> getColumnClass(int column)
+  public Class<?> getColumnClass(int column)
   {
-    return (treeTableModel!=null?treeTableModel.getColumnClass(column):null);
+    return (Class<?>) (treeTableModel!=null?treeTableModel.getColumnClass(column):null);
   }
 
   public int getRowCount()
@@ -84,6 +84,7 @@ public class TreeTableModelAdapter<E> extends AbstractTableModel
     return tree.getRowCount();
   }
 
+  @SuppressWarnings("unchecked")
   protected TreeNodeObject<E> nodeForRow(int row)
   {
     TreePath treePath = tree.getPathForRow(row);
