@@ -382,7 +382,7 @@ public class CheckboxTree extends JTree
             // click on a valid node
             if ((getCellRenderer()).isOnHotspot(x - rect.x, y - rect.y)) {
               TreePath path=this.getPathForLocation(x, y);
-              if(path!=null && path.getPath()!=null && path.getPath().length!=0 && path.getPath()[path.getPath().length-1] instanceof TreeNodeObject && (((TreeNodeObject<?>)path.getPath()[path.getPath().length-1]).canBeChecked()==false || ((TreeNodeObject<?>)path.getPath()[path.getPath().length-1]).isEnabled()==false)) {}
+              if(path!=null && path.getPath()!=null && path.getPath().length!=0 && path.getPath()[path.getPath().length-1] instanceof TreeNodeObject && (((TreeNodeObject)path.getPath()[path.getPath().length-1]).canBeChecked()==false || ((TreeNodeObject)path.getPath()[path.getPath().length-1]).isEnabled()==false)) {}
               else {
                 getCheckingModel().toggleCheckingPath(getPathForRow(row));
                 if (!isSelectsByChecking())

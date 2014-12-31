@@ -123,18 +123,18 @@ public class DefaultCheckboxTreeCellRenderer extends JPanel implements CheckboxT
      * most of the rendering is delegated to the wrapped DefaultTreeCellRenderer, the rest depends
      * on the TreeCheckingModel
      */
-    final Component component=(object instanceof TreeNodeObject)?((TreeNodeObject<?>)object).getTreeCellRendererComponent(tree, (TreeCellRenderer)this, label, selected, expanded, leaf, row, hasFocus):null;
+    final Component component=(object instanceof TreeNodeObject)?((TreeNodeObject)object).getTreeCellRendererComponent(tree, (TreeCellRenderer)this, label, selected, expanded, leaf, row, hasFocus):null;
     if(component==null) { 
       if(!(object instanceof TreeNodeObject)) this.label.getTreeCellRendererComponent(tree, object, selected, expanded, leaf, row, hasFocus);
       if (tree instanceof CheckboxTree) {
         TreePath path = tree.getPathForRow(row);
         TreeCheckingModel checkingModel = ((CheckboxTree) tree).getCheckingModel();
-        if(object instanceof TreeNodeObject && ((TreeNodeObject<?>)object).canBeChecked()==false) {
+        if(object instanceof TreeNodeObject && ((TreeNodeObject)object).canBeChecked()==false) {
           this.checkBox.setVisible(false);
         }
         else {
           this.checkBox.setVisible(true);
-          this.checkBox.setEnabled(checkingModel.isPathEnabled(path) && tree.isEnabled() && (!(object instanceof TreeNodeObject) || ((TreeNodeObject<?>)object).isEnabled()));
+          this.checkBox.setEnabled(checkingModel.isPathEnabled(path) && tree.isEnabled() && (!(object instanceof TreeNodeObject) || ((TreeNodeObject)object).isEnabled()));
           boolean checked = checkingModel.isPathChecked(path);
           boolean greyed = checkingModel.isPathGreyed(path);
           if (checked && !greyed) {

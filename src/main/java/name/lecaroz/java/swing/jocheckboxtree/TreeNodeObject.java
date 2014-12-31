@@ -15,9 +15,9 @@ import javax.swing.tree.TreeCellRenderer;
  *
  * @author Louis Lecaroz 
  */
-public interface TreeNodeObject<E>
+public interface TreeNodeObject
 {
-  E getObject();
+  Object getObject();
   boolean canBeChecked();
   boolean isEnabled();
   Component getTreeCellRendererComponent(JTree tree, TreeCellRenderer treeCellRenderer, DefaultTreeCellRenderer label, boolean selected, boolean expanded,

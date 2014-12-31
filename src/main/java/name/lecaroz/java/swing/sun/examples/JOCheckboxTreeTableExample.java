@@ -37,17 +37,17 @@ import java.util.Vector;
 import name.lecaroz.java.swing.jocheckboxtree.CheckboxTree;
 import name.lecaroz.java.swing.jocheckboxtree.DefaultTreeCheckingModel;
 import name.lecaroz.java.swing.jocheckboxtree.DependenciesModel;
+import name.lecaroz.java.swing.jocheckboxtree.ExtendedAbstractTreeTableModel;
+import name.lecaroz.java.swing.jocheckboxtree.ExtendedTreeTableModel;
 import name.lecaroz.java.swing.jocheckboxtree.PropagatePreservingCheckDependenciesTreeCheckingMode;
 import name.lecaroz.java.swing.jocheckboxtree.TreeNodeObject;
-import name.lecaroz.java.swing.sun.AbstractTreeTableModel;
 import name.lecaroz.java.swing.sun.JOCheckboxTreeTable;
-import name.lecaroz.java.swing.sun.TreeTableModel;
 
 public class JOCheckboxTreeTableExample extends JFrame {
   private static final long serialVersionUID = 4421111660963742252L;
 
   // Node implementation for managing display for each node of data
-  public class StringNode implements TreeNodeObject<String> {
+  public class StringNode implements TreeNodeObject {
     final private String data;
     final private boolean canBeChecked;
     final private StringNode[] childs;
@@ -101,13 +101,14 @@ public class JOCheckboxTreeTableExample extends JFrame {
   };
 
   // Data model for returning rows & columns data
-  public class SampleDataTreeModel  extends AbstractTreeTableModel<String> 
-  implements TreeTableModel<String> {    
+  public class SampleDataTreeModel  extends ExtendedAbstractTreeTableModel 
+  implements ExtendedTreeTableModel {    
+    
     // Names of the columns.
     private final String[] cNames = { "Name", "Description" };
 
     // Types of the columns.
-    private final Class<?>[] cTypes = { TreeTableModel.class, String.class };
+    private final Class<?>[] cTypes = { ExtendedTreeTableModel.class, String.class };
     
     public SampleDataTreeModel(Object root)
     {
@@ -145,9 +146,9 @@ public class JOCheckboxTreeTableExample extends JFrame {
       return cTypes[column];
     }
 
-    public Object getValueAt(TreeNodeObject<String> node, int column)
+    public Object getValueAt(Object node, int column)
     {
-      Object data = this.getObject(node);
+      Object data = this.getObject((TreeNodeObject) node);
       switch (column) {
         case 0:
           if(data.equals("0")) return "All"; else return ""+data.toString();
@@ -157,25 +158,38 @@ public class JOCheckboxTreeTableExample extends JFrame {
       return null;
     }
 
-    public String getTooltipAt(TreeNodeObject<String> node, int column)
+    public String getTooltipAt(Object node, int column)
     {
       switch (column) {
         case 0:
-          return "Tooltip: "+node.getObject().toString();
+          return "Tooltip: "+((TreeNodeObject) node).getObject().toString();
         case 1:
-          return "Description tooltip: "+node.getObject().toString();
+          return "Description tooltip: "+((TreeNodeObject) node).getObject().toString();
       }
       return null;
     }
 
-    public void setValueAt(Object aValue, TreeNodeObject<String> treeNodeObject, int column)
+    public void setValueAt(Object aValue, Object treeNodeObject, int column)
     {
     }
 
-    public String getObject(TreeNodeObject<String> node)
+    public String getObject(TreeNodeObject node)
     {
-      return ((TreeNodeObject<String>) node).getObject();
+      return (String) ((TreeNodeObject) node).getObject();
     }
+
+    public int getHierarchicalColumn()
+    {
+      // TODO Auto-generated method stub
+      return 0;
+    }
+
+    public int getIndexOfChild(Object arg0, Object arg1)
+    {
+      // TODO Auto-generated method stub
+      return 0;
+    }
+
   }
   
   public class StringDependencies implements DependenciesModel<String> {

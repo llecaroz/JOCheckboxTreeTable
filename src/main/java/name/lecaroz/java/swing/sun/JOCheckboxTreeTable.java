@@ -21,6 +21,7 @@ import javax.swing.table.*;
 import javax.swing.AbstractCellEditor;
 
 import name.lecaroz.java.swing.jocheckboxtree.CheckboxTree;
+import name.lecaroz.java.swing.jocheckboxtree.ExtendedTreeTableModel;
 import name.lecaroz.java.swing.jocheckboxtree.TreeCheckingMode;
 
 import java.awt.Dimension;
@@ -59,7 +60,7 @@ public class JOCheckboxTreeTable<E> extends JTable
     return this;
     
   }
-  public JOCheckboxTreeTable<E> setTreeTableModel(TreeTableModel<E> treeTableModel) {
+  public JOCheckboxTreeTable<E> setTreeTableModel(ExtendedTreeTableModel treeTableModel) {
 
     // Create the tree. It will be used as a renderer and editor. 
     tree = new TreeTableCellRenderer(treeTableModel);
@@ -85,8 +86,8 @@ public class JOCheckboxTreeTable<E> extends JTable
     tree.setRowHeight(getRowHeight());
 
     // Install the tree editor renderer and editor. 
-    setDefaultRenderer(TreeTableModel.class, tree);
-    setDefaultEditor(TreeTableModel.class, new TreeTableCellEditor());
+    setDefaultRenderer(ExtendedTreeTableModel.class, tree);
+    setDefaultEditor(ExtendedTreeTableModel.class, new TreeTableCellEditor());
 
     setShowGrid(false);
     setIntercellSpacing(new Dimension(0, 0));
@@ -94,7 +95,7 @@ public class JOCheckboxTreeTable<E> extends JTable
     return this;
     
   }
-  public JOCheckboxTreeTable(TreeTableModel<E> treeTableModel)
+  public JOCheckboxTreeTable(ExtendedTreeTableModel treeTableModel)
   {
     super();
     this.setTreeTableModel(treeTableModel);
@@ -109,7 +110,7 @@ public class JOCheckboxTreeTable<E> extends JTable
   @Override
   public int getEditingRow()
   {
-    return (getColumnClass(editingColumn) == TreeTableModel.class) ? -1 : editingRow;
+    return (getColumnClass(editingColumn) == ExtendedTreeTableModel.class) ? -1 : editingRow;
   }
   
   /**
@@ -277,7 +278,7 @@ public class JOCheckboxTreeTable<E> extends JTable
         if(tree.getRowForLocation(((MouseEvent)e).getX(),((MouseEvent)e).getY())==-1) {
           for(int counter = getColumnCount() - 1; counter >= 0;
           counter--) {
-            if(getColumnClass(counter) == TreeTableModel.class) {                                                                 
+            if(getColumnClass(counter) == ExtendedTreeTableModel.class) {                                                                 
               // Bug fix for MacOs X. 09-03-2004
               // The triangular arrows on JTreeTables in the MacOS L&F did not
               // expand or colapse the branches.  This is an update to address that.

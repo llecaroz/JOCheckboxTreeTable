@@ -20,9 +20,12 @@ import javax.swing.tree.TreePath;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
 
-import name.lecaroz.java.swing.jocheckboxtree.TreeNodeObject;
+import name.lecaroz.java.swing.jocheckboxtree.ExtendedTreeTableModel;
 
 /**
+ * By Louis Lecaroz on 2014/12/31: This class is based on the original code written by Philip Milne & Scott Violet, except that it now accepts 
+ * empty treeTableModel and is also able to return tooltips as new feature
+ * 
  * This is a wrapper class takes a TreeTableModel and implements the table model interface. The
  * implementation is trivial, with all of the event dispatching support provided by the superclass:
  * the AbstractTableModel.
@@ -40,9 +43,9 @@ public class TreeTableModelAdapter<E> extends AbstractTableModel
    */
   private static final long serialVersionUID = -3472763471994086774L;
   JTree tree;
-  TreeTableModel<E> treeTableModel;
+  ExtendedTreeTableModel treeTableModel;
 
-  public TreeTableModelAdapter(TreeTableModel<E> treeTableModel, JTree tree)
+  public TreeTableModelAdapter(ExtendedTreeTableModel treeTableModel, JTree tree)
   {
     this.tree = tree;
     this.treeTableModel = treeTableModel;
@@ -84,11 +87,10 @@ public class TreeTableModelAdapter<E> extends AbstractTableModel
     return tree.getRowCount();
   }
 
-  @SuppressWarnings("unchecked")
-  protected TreeNodeObject<E> nodeForRow(int row)
+  protected Object nodeForRow(int row)
   {
     TreePath treePath = tree.getPathForRow(row);
-    return (TreeNodeObject<E>) treePath.getLastPathComponent();
+    return treePath.getLastPathComponent();
   }
 
   public Object getValueAt(int row, int column)

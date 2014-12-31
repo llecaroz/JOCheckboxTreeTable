@@ -12,7 +12,7 @@ The CheckboxTree class is used in the JOCheckboxTreeTable class (based on the Su
 
 This example implements:
 - TreeNodeObject for custom rendering on each node
-- TreeTableModel for providing data to be displayed
+- ExtendedTreeTableModel for providing data to be displayed
 - DependenciesModel for declaring dependencies between nodes in PropagatePreservingCheckDependenciesTreeCheckingMode 
 
 Bugs correction
@@ -21,10 +21,11 @@ Bugs correction
 
 New features
 ============
-- The TreeTableModel methods now receives some TreeNodeObject as parameters and the get. As Consequence, a node implementing the TreeNodeObject can:
+- For resolving Sun-IP License, removed links to AbstractTreeTableModel&TreeTableModel, now inheriting from org.swinglabs.swingx
+- The ExtendedTreeTableModel methods now receives some TreeNodeObject as parameters and the get. As Consequence, a node implementing the TreeNodeObject can:
 	- render its own cell in the tree (custom icon for example)
 	- be considered as normal cell instead of of a checkbox
-- The TreeTableModel.getTooltipAt() method allows to return a tooltip for each cell
+- The ExtendedTreeTableModel.getTooltipAt() method allows to return a tooltip for each cell
 - PropagatePreservingCheckDependenciesTreeCheckingMode new checking mode allowing to propagate checking and un-checking requests based on nodes dependencies (a DependenciesModel model must be implemented)
 
 Using this project
@@ -41,7 +42,7 @@ Most part of codes under src/main/java/name/lecaroz/java/swing/jocheckboxtree wa
 - Lorenzo Bigagli
 
 Warning:
-AbstractTreeTableModel.java, JTreeTable.java (renamed and modified here into JOCheckboxTreeTable), TreeTableModel.java, TreeTableModelAdapter.java stored in the name.lecaroz.java.swing.sun package, are under Sun Microsystems Copyright (1997, 1998) and were modified for supporting new features like contextual tooltips. They were initially written by: 
+JTreeTable.java (renamed and modified here into JOCheckboxTreeTable), TreeTableModelAdapter.java stored in the name.lecaroz.java.swing.sun package, are under Sun Microsystems Copyright (1997, 1998) and were modified for supporting new features like contextual tooltips. They were initially written by: 
 - Philip Milne
 - Scott Violet
 

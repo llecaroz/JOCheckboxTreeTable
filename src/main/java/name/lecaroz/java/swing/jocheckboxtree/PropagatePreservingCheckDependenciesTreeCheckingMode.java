@@ -57,7 +57,7 @@ public class PropagatePreservingCheckDependenciesTreeCheckingMode<E> extends Tre
     boolean greyAll = false;
     for (int i = 1; i < parents.length; i++) {
       parents[i] = parents[i - 1].getParentPath();
-      if(parents[i].getLastPathComponent() instanceof TreeNodeObject  && ((TreeNodeObject<?>)parents[i].getLastPathComponent()).canBeChecked()==false) continue;
+      if(parents[i].getLastPathComponent() instanceof TreeNodeObject  && ((TreeNodeObject)parents[i].getLastPathComponent()).canBeChecked()==false) continue;
 
       if (uncheckAll) {
         this.model.removeFromCheckedPathsSet(parents[i]);
@@ -108,7 +108,7 @@ public class PropagatePreservingCheckDependenciesTreeCheckingMode<E> extends Tre
         
     // expand all dependencies of this node
     final AbstractList<E> toCheck=new Vector<E>();
-    if(path.getLastPathComponent() instanceof TreeNodeObject) toCheck.add(((TreeNodeObject<E>)path.getLastPathComponent()).getObject());
+    if(path.getLastPathComponent() instanceof TreeNodeObject) toCheck.add((E) ((TreeNodeObject)path.getLastPathComponent()).getObject());
     else this.doCheckPath(path);
     
     for(int pos=0;pos<toCheck.size();pos++) {
@@ -129,7 +129,7 @@ public class PropagatePreservingCheckDependenciesTreeCheckingMode<E> extends Tre
     
     for(int pos=0;pos<paths.size();pos++) {
       for(TreePath childPath:this.model.getChildrenPath(paths.get(pos))) {
-        if(childPath.getLastPathComponent() instanceof TreeNodeObject && ((TreeNodeObject<?>)childPath.getLastPathComponent()).canBeChecked()==true  && ((TreeNodeObject<?>)childPath.getLastPathComponent()).isEnabled()==true && this.model.isPathChecked(childPath)==false && toCheck.contains( ((TreeNodeObject<?>)childPath.getLastPathComponent()).getObject())  ) {
+        if(childPath.getLastPathComponent() instanceof TreeNodeObject && ((TreeNodeObject)childPath.getLastPathComponent()).canBeChecked()==true  && ((TreeNodeObject)childPath.getLastPathComponent()).isEnabled()==true && this.model.isPathChecked(childPath)==false && toCheck.contains( ((TreeNodeObject)childPath.getLastPathComponent()).getObject())  ) {
           this.doCheckPath(childPath);
         
         }
@@ -156,7 +156,7 @@ public class PropagatePreservingCheckDependenciesTreeCheckingMode<E> extends Tre
     
     // expand all parents/dependencies owner of this node
     final AbstractList<E> toUncheck=new Vector<E>();
-    if(path.getLastPathComponent() instanceof TreeNodeObject) toUncheck.add(((TreeNodeObject<E>)path.getLastPathComponent()).getObject());
+    if(path.getLastPathComponent() instanceof TreeNodeObject) toUncheck.add((E) ((TreeNodeObject)path.getLastPathComponent()).getObject());
     for(int pos=0;pos<toUncheck.size();pos++) {
       final E element=toUncheck.get(pos);
       E[] parents=dependencies.parents(element);
@@ -170,7 +170,7 @@ public class PropagatePreservingCheckDependenciesTreeCheckingMode<E> extends Tre
     // uncheck all parents/dependencies owner of this node
     for(TreePath childPath: this.model.getCheckingPaths()) {
       Object childPathComponent=(Object) childPath.getLastPathComponent();
-      if(childPathComponent instanceof TreeNodeObject && ((TreeNodeObject<?>)childPathComponent).canBeChecked()==true  && ((TreeNodeObject<?>)childPathComponent).isEnabled()==true && toUncheck.contains( ((TreeNodeObject<?>)childPathComponent).getObject())) 
+      if(childPathComponent instanceof TreeNodeObject && ((TreeNodeObject)childPathComponent).canBeChecked()==true  && ((TreeNodeObject)childPathComponent).isEnabled()==true && toUncheck.contains( ((TreeNodeObject)childPathComponent).getObject())) 
         this.doUncheckPath(childPath);
     }
 }

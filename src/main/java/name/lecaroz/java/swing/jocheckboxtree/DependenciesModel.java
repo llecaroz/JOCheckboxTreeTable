@@ -1,5 +1,3 @@
-package name.lecaroz.java.swing.jocheckboxtree;
-
 /*
  * Copyright 2014-2015 Louis Lecaroz, This file is part of
  * JOCheckboxTreeTable. JOCheckboxTreeTable is free software; you can redistribute it and/or
@@ -13,6 +11,8 @@ package name.lecaroz.java.swing.jocheckboxtree;
  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  * 02110-1301, USA
  */
+package name.lecaroz.java.swing.jocheckboxtree;
+
 public interface DependenciesModel<E>
 {
   DependenciesModel<E> addDependency(E entry,E dependency);
