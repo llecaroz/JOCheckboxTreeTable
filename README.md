@@ -21,7 +21,7 @@ Bugs correction
 
 New features
 ============
-- For resolving Sun-IP License, removed links to AbstractTreeTableModel&TreeTableModel, now inheriting from org.swinglabs.swingx
+- For resolving Sun-IP License issues, removed links to AbstractTreeTableModel & TreeTableModel, now inheriting from org.swinglabs.swingx
 - The ExtendedTreeTableModel methods now receives some TreeNodeObject as parameters and the get. As Consequence, a node implementing the TreeNodeObject can:
 	- render its own cell in the tree (custom icon for example)
 	- be considered as normal cell instead of of a checkbox
