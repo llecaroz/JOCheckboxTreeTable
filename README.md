@@ -30,10 +30,10 @@ New features
 
 Using this project
 ==================
-This project was uploaded as Maven Jar artifact under the OSSRH Nexus server (http://repo.maven.apache.org/maven2/name/lecaroz/java.swing.jocheckboxtreetable/0.0.2/java.swing.jocheckboxtreetable-0.0.2.pom). Please add the correct dependency in your POM project:
+This project was uploaded as Maven Jar artifact under the OSSRH Nexus server (http://repo.maven.apache.org/maven2/name/lecaroz/java.swing.jocheckboxtreetable/0.0.3/java.swing.jocheckboxtreetable-0.0.3.pom). Please add the correct dependency in your POM project:
 - artifactId: java.swing.jocheckboxtreetable
 - groupId: name.lecaroz
-- version: 0.0.2
+- version: 0.0.3
 
 Code authors
 ============
