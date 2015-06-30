@@ -21,6 +21,7 @@ import javax.swing.table.*;
 import javax.swing.AbstractCellEditor;
 
 import name.lecaroz.java.swing.jocheckboxtree.CheckboxTree;
+import name.lecaroz.java.swing.jocheckboxtree.CheckboxTreeCellRenderer;
 import name.lecaroz.java.swing.jocheckboxtree.ExtendedTreeTableModel;
 import name.lecaroz.java.swing.jocheckboxtree.TreeCheckingMode;
 
@@ -28,7 +29,9 @@ import java.awt.Dimension;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.EventObject;
 
 /**
@@ -45,7 +48,7 @@ import java.util.EventObject;
  * 2014/11/19: Louis Lecaroz, JTreeTable renamed into JOCheckboxTreeTable with new features 
  * related to the JCheckboxTree implementation 
  */
-public class JOCheckboxTreeTable<E> extends JTable
+public class JOCheckboxTreeTable<E> extends JTable implements MouseListener  
 {
   /**
    * 
@@ -98,6 +101,7 @@ public class JOCheckboxTreeTable<E> extends JTable
   public JOCheckboxTreeTable(ExtendedTreeTableModel treeTableModel)
   {
     super();
+    addMouseListener(this);
     this.setTreeTableModel(treeTableModel);
   }
 
@@ -308,5 +312,54 @@ public class JOCheckboxTreeTable<E> extends JTable
     {
       return null;
     }
+  }
+
+  // MouseListener implementation
+  public void mouseClicked(MouseEvent event)
+  { 
+      if (event.getClickCount() == 2 && !event.isConsumed()) {
+        Point point = event.getPoint();
+        int row,column;
+        row   = rowAtPoint(point);
+        column  = columnAtPoint(point);
+        if (row != -1) {
+    
+          getTree().getCellRenderer();
+          Rectangle rect=getTree().getRowBounds(row);
+  
+          if (rect != null) {
+            // click on a valid node
+            SwingUtilities.convertMouseEvent(this, event, getTree());
+            if(((TreeTableModelAdapter<?>)super.getModel()).isLeaf(row,column) || column>0) {
+              if (!((CheckboxTreeCellRenderer) getTree().getCellRenderer()).isOnHotspot(event.getX() - rect.x, event.getY() - rect.y) || column>0) {          
+                event.consume();
+                ((TreeTableModelAdapter<?>)super.getModel()).doubleClicked(row, column);
+          
+              }
+            }
+          }
+        }
+      }
+  }
+  
+  public void mousePressed(MouseEvent e)
+  {
+    // TODO Auto-generated method stub
+    
+  }
+  public void mouseReleased(MouseEvent e)
+  {
+    // TODO Auto-generated method stub
+    
+  }
+  public void mouseEntered(MouseEvent e)
+  {
+    // TODO Auto-generated method stub
+    
+  }
+  public void mouseExited(MouseEvent e)
+  {
+    // TODO Auto-generated method stub
+    
   }
 }

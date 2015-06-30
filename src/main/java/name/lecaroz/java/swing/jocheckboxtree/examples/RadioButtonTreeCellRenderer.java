@@ -89,6 +89,7 @@ public class RadioButtonTreeCellRenderer extends JPanel implements CheckboxTreeC
     }
 
     public boolean isOnHotspot(int x, int y) {
-	return (button.getBounds().contains(x, y));
+      return (button.getBounds().contains(x, y));
     }
+
 }

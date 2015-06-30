@@ -21,6 +21,7 @@ Bugs correction
 
 New features
 ============
+- Model now inheriting from ExtendedTreeTableModel can now receive double clicks on leafs and columns
 - For resolving Sun-IP License, removed links to AbstractTreeTableModel&TreeTableModel, now inheriting from org.swinglabs.swingx
 - The ExtendedTreeTableModel methods now receives some TreeNodeObject as parameters and the get. As Consequence, a node implementing the TreeNodeObject can:
 	- render its own cell in the tree (custom icon for example)
@@ -33,7 +34,7 @@ Using this project
 This project was uploaded as Maven Jar artifact under the OSSRH Nexus server (http://repo.maven.apache.org/maven2/name/lecaroz/java.swing.jocheckboxtreetable/0.0.3/java.swing.jocheckboxtreetable-0.0.3.pom). Please add the correct dependency in your POM project:
 - artifactId: java.swing.jocheckboxtreetable
 - groupId: name.lecaroz
-- version: 0.0.3
+- version: 0.0.4
 
 Code authors
 ============

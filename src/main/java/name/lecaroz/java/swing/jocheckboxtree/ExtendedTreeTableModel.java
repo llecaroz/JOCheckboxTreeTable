@@ -32,5 +32,10 @@ public interface ExtendedTreeTableModel extends TreeTableModel
     /**
      * Returns the object stored in the TreeNodeObject
      */
-    Object getObject(TreeNodeObject node);
+    Object getObject(Object treeNodeObject);
+
+    /**
+     * Called when double clicked on the row/column content
+     */
+    public void doubleClicked(Object treeNodeObject, int column);
 }

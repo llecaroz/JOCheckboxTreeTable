@@ -43,7 +43,7 @@ public class TreeTableModelAdapter<E> extends AbstractTableModel
    */
   private static final long serialVersionUID = -3472763471994086774L;
   JTree tree;
-  ExtendedTreeTableModel treeTableModel;
+  private ExtendedTreeTableModel treeTableModel;
 
   public TreeTableModelAdapter(ExtendedTreeTableModel treeTableModel, JTree tree)
   {
@@ -111,5 +111,15 @@ public class TreeTableModelAdapter<E> extends AbstractTableModel
   public void setValueAt(Object value, int row, int column)
   {
     if(treeTableModel!=null) treeTableModel.setValueAt(value, nodeForRow(row), column);
+  }
+
+  public void doubleClicked(int row, int column)
+  {
+    if(treeTableModel!=null) treeTableModel.doubleClicked(nodeForRow(row), column);
+    
+  }
+  
+  boolean isLeaf(int row, int column) {
+    return treeTableModel!=null?treeTableModel.isLeaf(nodeForRow(row)):false;    
   }
 }

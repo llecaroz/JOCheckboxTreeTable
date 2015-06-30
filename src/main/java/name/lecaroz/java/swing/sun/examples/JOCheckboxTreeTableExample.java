@@ -148,7 +148,7 @@ public class JOCheckboxTreeTableExample extends JFrame {
 
     public Object getValueAt(Object node, int column)
     {
-      Object data = this.getObject((TreeNodeObject) node);
+      Object data = this.getObject(node);
       switch (column) {
         case 0:
           if(data.equals("0")) return "All"; else return ""+data.toString();
@@ -173,7 +173,7 @@ public class JOCheckboxTreeTableExample extends JFrame {
     {
     }
 
-    public String getObject(TreeNodeObject node)
+    public String getObject(Object node)
     {
       return (String) ((TreeNodeObject) node).getObject();
     }
@@ -188,6 +188,11 @@ public class JOCheckboxTreeTableExample extends JFrame {
     {
       // TODO Auto-generated method stub
       return 0;
+    }
+
+    public void doubleClicked(Object treeNodeObject, int column)
+    {
+      System.out.println("double clicked");
     }
 
   }
