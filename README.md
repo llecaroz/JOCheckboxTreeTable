@@ -22,7 +22,7 @@ Bugs correction
 New features
 ============
 - Model now inheriting from ExtendedTreeTableModel can now receive double clicks on leafs and columns
-- For resolving Sun-IP License, removed links to AbstractTreeTableModel&TreeTableModel, now inheriting from org.swinglabs.swingx
+- For resolving Sun-IP Licensing issues, removed links to AbstractTreeTableModel & TreeTableModel, now inheriting from org.swinglabs.swingx
 - The ExtendedTreeTableModel methods now receives some TreeNodeObject as parameters and the get. As Consequence, a node implementing the TreeNodeObject can:
 	- render its own cell in the tree (custom icon for example)
 	- be considered as normal cell instead of of a checkbox
