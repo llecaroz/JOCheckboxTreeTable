@@ -3,7 +3,7 @@
 
 	<groupId>name.lecaroz</groupId>
 	<artifactId>java.swing.jocheckboxtreetable</artifactId>
-	<version>0.0.4</version>
+	<version>0.0.5-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>J(ava) O(pen source) Checkbox Tree Table</name>
@@ -36,7 +36,7 @@
 		<!-- <developerConnection>scm:git:https://github.com/llecaroz/JOCheckboxTreeTable.git</developerConnection> -->
 		<developerConnection>scm:git:git@github.com:llecaroz/JOCheckboxTreeTable.git</developerConnection>
 		<url>https://github.com/llecaroz/JOCheckboxTreeTable</url>
-		<tag>java.swing.jocheckboxtreetable-0.0.4</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
