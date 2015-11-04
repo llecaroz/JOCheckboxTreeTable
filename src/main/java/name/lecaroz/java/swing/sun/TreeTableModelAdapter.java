@@ -15,6 +15,9 @@ package name.lecaroz.java.swing.sun;
  */
 
 import javax.swing.table.AbstractTableModel;
+
+import java.awt.Component;
+
 import javax.swing.JTree;
 import javax.swing.tree.TreePath;
 import javax.swing.event.TreeExpansionEvent;
@@ -121,5 +124,12 @@ public class TreeTableModelAdapter<E> extends AbstractTableModel
   
   boolean isLeaf(int row, int column) {
     return treeTableModel!=null?treeTableModel.isLeaf(nodeForRow(row)):false;    
+  }
+
+
+  public void popupMenu(int row, int column, Component component, int x, int y)
+  {
+    if(treeTableModel!=null) treeTableModel.popupMenu(nodeForRow(row), column, component, x, y);    
+    
   }
 }

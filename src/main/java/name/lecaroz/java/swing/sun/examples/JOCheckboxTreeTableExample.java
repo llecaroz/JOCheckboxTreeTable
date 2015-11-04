@@ -17,9 +17,12 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
 import javax.swing.UIManager;
+import javax.swing.border.BevelBorder;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeCellRenderer;
 
@@ -27,6 +30,8 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.AbstractList;
@@ -193,6 +198,26 @@ public class JOCheckboxTreeTableExample extends JFrame {
     public void doubleClicked(Object treeNodeObject, int column)
     {
       System.out.println("double clicked");
+    }
+
+    public void popupMenu(Object treeNodeObject, int column, Component component, int x, int y)
+    {
+      Object file = getObject((TreeNodeObject)treeNodeObject);
+      JPopupMenu menu = new JPopupMenu("Popup:"+file.toString());
+      
+      ActionListener menuListener = new ActionListener() {
+        public void actionPerformed(ActionEvent event) {
+          System.out.println("Popup menu item ["
+              + event.getActionCommand() + "] was pressed.");
+        }
+      };
+      JMenuItem item;
+      menu.add(item = new JMenuItem("Settings . . ."));
+      item.addActionListener(menuListener);
+
+      menu.setLabel("Justification");
+      menu.setBorder(new BevelBorder(BevelBorder.RAISED));
+      menu.show(component,x,y);
     }
 
   }

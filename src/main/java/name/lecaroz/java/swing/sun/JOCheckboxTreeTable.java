@@ -342,15 +342,36 @@ public class JOCheckboxTreeTable<E> extends JTable implements MouseListener
       }
   }
   
+  private void popupMenu(MouseEvent event) {
+    if (event.isPopupTrigger()) {
+      Point point = event.getPoint();
+      int row,column;
+      row   = rowAtPoint(point);
+      column  = columnAtPoint(point);
+      if (row != -1) {
+    
+        getTree().getCellRenderer();
+        Rectangle rect=getTree().getRowBounds(row);
+    
+        if (rect != null) {
+          // click on a valid node
+          SwingUtilities.convertMouseEvent(this, event, getTree());
+          if (!((CheckboxTreeCellRenderer) getTree().getCellRenderer()).isOnHotspot(event.getX() - rect.x, event.getY() - rect.y)) {          
+            event.consume();
+            ((TreeTableModelAdapter<?>)super.getModel()).popupMenu(row, column, event.getComponent(), event.getX(), event.getY());
+      
+          }
+        }
+      }
+    }
+  }
   public void mousePressed(MouseEvent e)
   {
-    // TODO Auto-generated method stub
-    
+    popupMenu(e);
   }
   public void mouseReleased(MouseEvent e)
   {
-    // TODO Auto-generated method stub
-    
+    popupMenu(e);
   }
   public void mouseEntered(MouseEvent e)
   {

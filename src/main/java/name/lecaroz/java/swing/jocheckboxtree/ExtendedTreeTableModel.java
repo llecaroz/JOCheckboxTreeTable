@@ -13,6 +13,8 @@
  */
 package name.lecaroz.java.swing.jocheckboxtree;
 
+import java.awt.Component;
+
 import org.jdesktop.swingx.treetable.TreeTableModel;
 
 /**
@@ -38,4 +40,6 @@ public interface ExtendedTreeTableModel extends TreeTableModel
      * Called when double clicked on the row/column content
      */
     public void doubleClicked(Object treeNodeObject, int column);
+
+    public void popupMenu(Object object, int column, Component component, int x, int y);
 }
